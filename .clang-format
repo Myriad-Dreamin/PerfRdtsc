@@ -1,0 +1,6 @@
+BasedOnStyle: LLVM
+---
+Language: Cpp
+AlignAfterOpenBracket: AlwaysBreak
+AllowAllParametersOfDeclarationOnNextLine: false
+ContinuationIndentWidth: 2

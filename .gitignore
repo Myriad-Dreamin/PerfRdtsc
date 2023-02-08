@@ -1,0 +1,16 @@
+.idea
+.vscode
+.vs
+
+# Build and CMake files
+build
+cmake-build-*
+crash-*
+CMakePresets.json
+CMakeSettings.json
+
+# local data
+.data/
+
+# clangd cache
+.cache/
