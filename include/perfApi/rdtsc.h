@@ -213,10 +213,10 @@ static inline void tscInternalSyncTime(int64_t *tsc, int64_t *ns) {
   }
   j--;
 #else
-  int j = N + 1;
+  j = N + 1;
 #endif
 
-  for (i = 2; i <= j; i++) {
+  for (i = 2; i < j; i++) {
     if (tscs[i] - tscs[i - 1] < tscs[best] - tscs[best - 1]) {
       best = i;
     }
