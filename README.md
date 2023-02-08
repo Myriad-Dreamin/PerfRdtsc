@@ -7,13 +7,13 @@ Use tsc on x86 Linux / Linux Kernel / Windows, based on [tscns](https://github.c
 
 The library is header only. You can also link PerfRdtsc as a cmake interface library.
 
-```
+```cmake
 add_subdirectory(vendor/rdtsc)
 ```
 
 #### API Usage
 
-```
+```c++
 #include <perfApi/rdtsc.h>
 
 int runApp() {
