@@ -49,15 +49,26 @@ SOFTWARE.
 #endif
 
 #if (mRdtscPlatformLit == mRdtscPlatformWindows)
+
 #ifndef WIN32_LEAN_AND_MEAN
 #define WIN32_LEAN_AND_MEAN
 #define RDTSC_CUSTOM_WIN32_LEAN_AND_MEAN
 #endif
+
 #ifndef NOSERVICE
 #define NOSERVICE
 #define RDTSC_CUSTOM_NOSERVICE
 #endif
+
+#ifdef __cplusplus // we disable min/max macro in c++ context
+#ifndef NOMINMAX
+#define NOMINMAX
+#define RDTSC_CUSTOM_NOMINMAX
+#endif
+#endif
+
 #include <Windows.h>
+
 #ifdef RDTSC_CUSTOM_WIN32_LEAN_AND_MEAN
 #undef WIN32_LEAN_AND_MEAN
 #undef RDTSC_CUSTOM_WIN32_LEAN_AND_MEAN
@@ -66,7 +77,12 @@ SOFTWARE.
 #undef NOSERVICE
 #undef RDTSC_CUSTOM_NOSERVICE
 #endif
+#ifdef RDTSC_CUSTOM_NOMINMAX
+#undef NOMINMAX
+#undef RDTSC_CUSTOM_NOMINMAX
 #endif
+#endif
+
 #if (mRdtscPlatformLit == mRdtscPlatformWindows) ||                            \
   (mRdtscPlatformLit == mRdtscPlatformLinuxUser)
 #ifdef __cplusplus
