@@ -229,7 +229,7 @@ static inline void tscInternalSyncTime(int64_t *tsc, int64_t *ns) {
   }
   j--;
 #else
-  j = N + 1;
+  j = tsc_sync_times + 1;
 #endif
 
   for (i = 2; i < j; i++) {
